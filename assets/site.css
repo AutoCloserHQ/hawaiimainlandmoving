@@ -3,3 +3,18 @@
 @media(max-width:760px){.wrap{width:calc(100% - 36px)}.nav{min-height:78px}.menu{display:block}.navlinks{display:none;position:absolute;top:78px;left:0;right:0;background:var(--deep);padding:20px;z-index:20;flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.navlinks a{padding:10px}.hero-grid{grid-template-columns:1fr;padding:44px 0;gap:35px}.hero h1{max-width:600px}.hero-copy{font-size:17px}.hero-note{margin-top:20px}.band .wrap{flex-wrap:wrap;gap:8px 20px}.band span{flex:1 1 40%}.section{padding:60px 0}.section-head,.explorer,.cost-layout{grid-template-columns:1fr;gap:25px}.feature-grid{grid-template-columns:1fr;gap:20px}.feature .number{margin-bottom:12px}.explorer{padding:25px}.route-output{border-left:0;border-top:1px solid #b5ceca;padding:25px 0 0}.timeline{grid-template-columns:1fr}.guide-grid{grid-template-columns:1fr 1fr}.guide-card{padding:22px}.cta{padding:30px;display:block}.cta .btn{margin-top:24px}.footer-grid{grid-template-columns:1fr;gap:30px}.article-layout{grid-template-columns:1fr;padding-block:40px}.article-side{position:static}.article-hero{padding:40px 0}.journey-detail{min-height:130px}}
 @media(max-width:420px){.quote{padding:20px}.row{grid-template-columns:1fr;gap:0}.steps{justify-content:space-between;gap:5px}.steps li{gap:4px;font-size:11px}.steps b{width:22px;height:22px}.guide-grid{grid-template-columns:1fr}.brand{font-size:1rem}.journey-stages{gap:8px}.stage{font-size:13px}.hero h1{font-size:2.65rem}.form-actions .btn{padding:12px 15px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ship{animation:none;left:45%}.guide-card:hover{transform:none}*{transition:none!important}}
+
+/* Keep long page names and grid children within narrow viewports. */
+html,body{width:100%;min-width:0}
+.wrap{max-width:100%;min-width:0}
+h1,h2,h3,p,a,label,summary,li,.route-name{overflow-wrap:anywhere}
+.hero-grid>*,.section-head>*,.feature-grid>*,.explorer>*,.cost-layout>*,.timeline>*,.guide-grid>*,.footer-grid>*,.article-layout>*,.row>*,.nav>*{min-width:0}
+.btn{max-width:100%;white-space:normal;text-align:center}
+header{position:relative}
+.menu{flex-shrink:0}
+@media(max-width:760px){
+ .navlinks{top:100%}
+ .article-hero h1{font-size:clamp(2rem,8vw,3.25rem);line-height:1.12}
+ .article-layout{grid-template-columns:minmax(0,1fr)}
+ .brand small{letter-spacing:.12em}
+}
